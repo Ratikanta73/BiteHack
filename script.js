@@ -682,7 +682,7 @@ function placeOrder() {
     // Simulate order processing
     setTimeout(() => {
         updateOrderStatus(order.id, 'preparing');
-    }, 2000);
+    }, 3000);
     
     setTimeout(() => {
         updateOrderStatus(order.id, 'ready');
