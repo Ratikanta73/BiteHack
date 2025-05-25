@@ -1,6 +1,6 @@
 # 🍽️ BiteHack – Elevate Your Restaurant’s Digital Presence
 
-![BiteHack Banner](assets/images/banner.png)
+![BiteHack Banner](assets/banner.png)
 
 **BiteHack** is a modern, responsive, and visually aesthetic website template designed for restaurants, cafés, and food businesses. It’s crafted to offer an engaging user experience while effectively showcasing your brand, menu, and culinary style online.
 
@@ -54,10 +54,10 @@ This project is ideal for static websites and can be easily extended with backen
 > Replace these URLs with actual hosted screenshots or GitHub repo images.
 
 ### 🏠 Homepage
-![Homepage](/assets/images/homepage.png)
+![Homepage](/assets/homepage.png)
 
 ### 📋 Menu Section
-![Menu](/assets/images/menu.png)
+![Menu](/assets/menu.png)
 
 ---
 
