@@ -59,6 +59,8 @@ This project is ideal for static websites and can be easily extended with backen
 ### 📋 Menu Section
 ![Menu](/assets/menu.png)
 
+### 📋 Order Section
+![Order](/assets/order.png)
 ---
 
 ## 🛠️ Tech Stack
