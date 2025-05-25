@@ -15,11 +15,7 @@
 - [📸 Screenshots](#-screenshots)
 - [🛠️ Tech Stack](#-tech-stack)
 - [📁 Project Structure](#-project-structure)
-- [⚙️ Installation & Setup](#-installation--setup)
-- [🔧 Customization Guide](#-customization-guide)
-- [🙌 Contributing](#-contributing)
-- [📜 License](#-license)
-- [📇 Contact](#-contact)
+
 
 ---
 
