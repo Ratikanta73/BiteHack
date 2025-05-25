@@ -759,35 +759,42 @@ function renderOrders() {
     // Sort orders by timestamp (newest first)
     const sortedOrders = [...orders].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
-    ordersContainer.innerHTML = sortedOrders.map(order => `
-        <div class="order-card">
-            <div class="order-header">
-                <div class="order-id">Order #${order.id}</div>
-                <div class="order-status status-${order.status}">
-                    <i class="fas fa-${getStatusIcon(order.status)}"></i>
-                    ${order.status.charAt(0).toUpperCase() + order.status.slice(1)}
-                </div>
-            </div>
-            <div class="order-items">
-                ${order.items.map(item => `
-                    <div class="order-item">
-                        <div class="order-item-details">
-                            <strong>${item.name}</strong>
-                            <span>Qty: ${item.quantity}</span>
-                        </div>
-                        <div class="order-item-price">₹${item.price * item.quantity}</div>
+    ordersContainer.innerHTML = `
+        ${sortedOrders.map(order => `
+            <div class="order-card">
+                <div class="order-header">
+                    <div class="order-id">Order #${order.id}</div>
+                    <div class="order-status status-${order.status}">
+                        <i class="fas fa-${getStatusIcon(order.status)}"></i>
+                        ${order.status.charAt(0).toUpperCase() + order.status.slice(1)}
                     </div>
-                `).join('')}
-            </div>
-            <div class="order-total">
-                <div class="order-time">
-                    <i class="fas fa-calendar-alt"></i>
-                    ${formatDateTime(order.timestamp)}
                 </div>
-                <div class="total-amount">Total: ₹${order.total}</div>
+                <div class="order-items">
+                    ${order.items.map(item => `
+                        <div class="order-item">
+                            <div class="order-item-details">
+                                <strong>${item.name}</strong>
+                                <span>Qty: ${item.quantity}</span>
+                            </div>
+                            <div class="order-item-price">₹${item.price * item.quantity}</div>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="order-total">
+                    <div class="order-time">
+                        <i class="fas fa-calendar-alt"></i>
+                        ${formatDateTime(order.timestamp)}
+                    </div>
+                    <div class="total-amount">Total: ₹${order.total}</div>
+                </div>
             </div>
+        `).join('')}
+        <div style="text-align: center; margin-top: 2rem;">
+            <button onclick="clearOrderHistory()" class="order-action-btn" style="background: #ff7675; color: white;">
+                <i class="fas fa-trash"></i> Clear History
+            </button>
         </div>
-    `).join('');
+    `;
 }
 
 function getStatusIcon(status) {
@@ -941,4 +948,13 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeApp);
 } else {
     initializeApp();
+}
+// Add this function to clear order history
+function clearOrderHistory() {
+    orders = [];
+    saveOrdersToStorage();
+    if (currentSection === 'orders') {
+        renderOrders();
+    }
+    showToast('Order history cleared successfully', 'success');
 }
