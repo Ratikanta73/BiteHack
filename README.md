@@ -61,6 +61,7 @@ This project is ideal for static websites and can be easily extended with backen
 
 ### 📋 Order Section
 ![Order](/assets/order.png)
+
 ---
 
 ## 🛠️ Tech Stack
