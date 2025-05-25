@@ -664,7 +664,6 @@ function placeOrder() {
         total: cart.reduce((total, item) => total + (item.price * item.quantity), 0),
         status: 'pending',
         timestamp: new Date().toISOString(),
-        // estimatedTime: Math.floor(Math.random() * 20) + 10
     };
 
     orders.push(order);
@@ -686,12 +685,12 @@ function placeOrder() {
     
     setTimeout(() => {
         updateOrderStatus(order.id, 'ready');
-    // }, order.estimatedTime * 30000); // Half the estimated time
+   
     }, 20000); // Half the estimated time
     
     setTimeout(() => {
         updateOrderStatus(order.id, 'completed');
-    // }, order.estimatedTime * 60000);
+    
     },  30000);
 }
 
